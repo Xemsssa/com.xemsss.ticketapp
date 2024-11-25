@@ -48,6 +48,17 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+                const SizedBox(height: 30,),
+                const ContainerHotels(),
+                SingleChildScrollView(
+                  child: Row(
+                    children: [
+                      Hotelscreen(),
+                      const Hotelscreen(),
+                      const Hotelscreen(),
+                    ],
+                  )
+                )
 
               ],
             ),
