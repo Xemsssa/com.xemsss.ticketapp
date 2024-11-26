@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/utils/styles.dart';
 
-class HeaderText extends StatelessWidget {
-  const HeaderText({
-    super.key,
+class ContainerHeading extends StatelessWidget {
+  final String string ;
+  const ContainerHotels({
+    super.key, required this.string
   });
 
   @override
@@ -12,7 +13,7 @@ class HeaderText extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text("Upcoming Flight",
+          Text(string,
             style: Styles.headlineStyle2,),
           InkWell(
             onTap: () {
