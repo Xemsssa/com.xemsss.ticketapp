@@ -53,12 +53,13 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 30,),
                 ContainerHeading(string: 'Hotels'),
                 SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
                   child: Row(
-                    // children: ticketList.map((el)) => {Hotelscreen(el)}),
-                    children:
-                    [
-                      Hotelscreen()
-                    ]
+                    children: hotelList.map((hotel) => HotelScreen(hotel: hotel)).toList(),
+                    // children:
+                    // [
+                    //   Hotelscreen()
+                    // ]
                 )
                 )
               ],
@@ -69,3 +70,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+

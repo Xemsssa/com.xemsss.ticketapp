@@ -2,15 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:test_app/screens/app_layout.dart';
 import 'package:test_app/utils/styles.dart';
 
-class Hotelscreen extends StatelessWidget {
-  const Hotelscreen({super.key});
+class HotelScreen extends StatelessWidget {
+  final Map<String, dynamic>  hotel;
+  const HotelScreen({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return Container(
       height: 280,
-      width: size.width * 0.40,
+      width: size.width * 0.45,
       padding:EdgeInsets.all(15),
       margin: EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
@@ -33,9 +34,9 @@ class Hotelscreen extends StatelessWidget {
               child: Image.asset('assets/images/hotelroom.jpeg',
               fit: BoxFit.contain,),
           ),
-          Text('Open Space', style: Styles.headlineStyle3),
-          Text('London', style: Styles.headlineStyle4.copyWith(color: Styles.backgroundColor)),
-          Text('\$25/night', style: Styles.headlineStyle3)
+          Text(hotel['place'], style: Styles.headlineStyle3),
+          Text(hotel['destination'], style: Styles.headlineStyle4.copyWith(color: Styles.backgroundColor)),
+          Text('\$${hotel['price']}/night', style: Styles.headlineStyle3)
         ],
       ),
     );
