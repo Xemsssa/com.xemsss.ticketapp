@@ -80,7 +80,7 @@ class SearchScreen extends StatelessWidget {
                         ),
                         Container(
                           width: size.width * 0.99,
-                          height: size.height * 0.25,
+                          height: size.height * 0.14,
                           padding: EdgeInsets.all(20),
                           decoration: BoxDecoration(
                             color: Colors.red,
@@ -89,7 +89,7 @@ class SearchScreen extends StatelessWidget {
                           child: Column(
                             children: [
                               Text('Take love', style: Styles.headlineStyle2.copyWith(color: Colors.white)),
-                              Text('data')
+                              Text('smile')
                             ],
                           ),
                         ),

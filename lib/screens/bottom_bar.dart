@@ -1,5 +1,6 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:test_app/screens/TicketScreen.dart';
 import 'package:test_app/screens/home_screen.dart';
 import 'package:test_app/screens/search_screen.dart';
 import 'package:test_app/utils/styles.dart';
@@ -16,8 +17,7 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOptions = <Widget> [
     HomeScreen(),
     SearchScreen(),
-    const Text("Search"),
-    const Text("Tickets"),
+    TicketScreen(),
     const Text("Profile"),
   ];
 
@@ -51,7 +51,7 @@ class _BottomBarState extends State<BottomBar> {
               label: "Home",
               activeIcon: Icon(FluentSystemIcons.ic_fluent_home_filled) ),
           BottomNavigationBarItem(icon: Icon(FluentSystemIcons.ic_fluent_search_regular),
-              label: "SearchBar.dart",
+              label: "SearchBar",
               activeIcon: Icon(FluentSystemIcons.ic_fluent_search_filled) ),
           BottomNavigationBarItem(icon: Icon(FluentSystemIcons.ic_fluent_ticket_regular),
               label: "Ticket",
