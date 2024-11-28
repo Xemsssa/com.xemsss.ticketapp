@@ -3,7 +3,8 @@ import 'package:test_app/utils/styles.dart';
 
 class ContainerHeading extends StatelessWidget {
   final String string ;
-  const ContainerHotels({
+
+  ContainerHeading({
     super.key, required this.string
   });
 

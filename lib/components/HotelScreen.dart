@@ -9,18 +9,32 @@ class Hotelscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return Container(
+      height: 280,
+      width: size.width * 0.40,
+      padding:EdgeInsets.all(15),
+      margin: EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
         color: Styles.primaryColor,
+        borderRadius: BorderRadius.circular(20)
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 30,
-              child: Image.asset('assets/images/hotelroom.jpeg'),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              // color: const Color(0xff7c94b6),
+              // image: const DecorationImage(
+              //   image: AssetImage('assets/images/hotelroom.jpeg',),
+              //   fit: BoxFit.cover,
+              // ),
+            ),
+          // ),
+              child: Image.asset('assets/images/hotelroom.jpeg',
+              fit: BoxFit.contain,),
           ),
           Text('Open Space', style: Styles.headlineStyle3),
-          Text('London', style: Styles.headlineStyle4),
+          Text('London', style: Styles.headlineStyle4.copyWith(color: Styles.backgroundColor)),
           Text('\$25/night', style: Styles.headlineStyle3)
         ],
       ),
