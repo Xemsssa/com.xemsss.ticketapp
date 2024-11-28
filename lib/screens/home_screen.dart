@@ -40,14 +40,11 @@ class HomeScreen extends StatelessWidget {
                 // const HeaderText(),
                 ContainerHeading(string: 'Upcoming Flight'),
                 const SizedBox(height: 30,),
-                const SingleChildScrollView(
+                SingleChildScrollView(
                   padding: EdgeInsets.only(right: 20),
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: [
-                      Ticketview(),
-                      Ticketview()
-                    ],
+                    children: ticketList.map((ticket) => Ticketview(ticket: ticket)).toList()
                   ),
                 ),
                 const SizedBox(height: 30,),
