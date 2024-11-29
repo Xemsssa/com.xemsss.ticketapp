@@ -11,13 +11,13 @@ class IconText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       // child:  TextField(
       //   decoration: InputDecoration(
       //   ),
       // ),
       child: Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10)
@@ -25,7 +25,7 @@ class IconText extends StatelessWidget {
           child: Row(
             children: [
               Icon(icon, color: Styles.primaryColor),
-              SizedBox(width: 10,),
+              const SizedBox(width: 10,),
               Text(text, style: Styles.headlineStyle3)
             ],
           )

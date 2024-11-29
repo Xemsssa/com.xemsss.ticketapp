@@ -12,7 +12,8 @@ class HotelScreen extends StatelessWidget {
     return Container(
       height: 280,
       width: size.width * 0.45,
-      padding:EdgeInsets.all(15),
+      padding:const EdgeInsets.all(15),
+      // ignore: prefer_const_constructors
       margin: EdgeInsets.only(left: 10, right: 10),
       decoration: BoxDecoration(
         color: Styles.primaryColor,

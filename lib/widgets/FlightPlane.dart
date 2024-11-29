@@ -23,7 +23,7 @@ class FlightPlane extends StatelessWidget {
             },
           ),
         ),
-        Center(child: Transform.rotate(angle: 1.5, child: Icon(Icons.local_airport_rounded, color: Colors.white, size: 30),)),
+        Center(child: Transform.rotate(angle: 1.5, child: const Icon(Icons.local_airport_rounded, color: Colors.white, size: 30),)),
       ]
     );
   }

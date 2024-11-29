@@ -5,7 +5,7 @@ import 'package:test_app/utils/styles.dart';
 
 class Tes extends StatelessWidget {
   final String text1, text2;
-  Tes({
+  const Tes({
     super.key, required this.text1, required this.text2
     // required this.sie,
   });
@@ -23,7 +23,7 @@ class Tes extends StatelessWidget {
         decoration: BoxDecoration(
             color: Styles.backgroundColor,
             borderRadius: BorderRadius.circular(20),
-          border: Border.all(width: 1, color: Styles.primaryColor)
+          border: Border.all(width: 2, color: Styles.primaryColor)
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -38,17 +38,18 @@ class Tes extends StatelessWidget {
                   color: Colors.white
               ),
               child:
-              Center(child: Text(text1)),
+              Center(child: Text(text1, style: const TextStyle(
+                fontWeight: FontWeight.bold
+              ),)),
             ),
-            Container(
+            SizedBox(
               width: size.width * 0.45,
               child:
-              Center(child: Text(text2)),
+              Center(child: Text(text2, style: TextStyle(color: Styles.primaryColor, fontWeight: FontWeight.bold))),
             )
           ],
         ),
-      ),
-
+      )
     );
   }
 }

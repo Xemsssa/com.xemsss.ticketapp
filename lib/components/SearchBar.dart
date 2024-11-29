@@ -14,7 +14,7 @@ class Search extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: Styles.primaryColor
       ),
-      padding: EdgeInsets.symmetric(horizontal: 10 ,vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10 ,vertical: 10),
       child: const Row(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

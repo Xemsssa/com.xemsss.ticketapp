@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Header(),
-                    Container(
+                    SizedBox(
                       height: 50,
                       width: 50,
                       child: Image.asset('assets/images/ticket-booking.png'),
@@ -38,17 +38,17 @@ class HomeScreen extends StatelessWidget {
                 const Search(),
                 const SizedBox(height: 30,),
                 // const HeaderText(),
-                ContainerHeading(string: 'Upcoming Flight'),
+                const ContainerHeading(string: 'Upcoming Flight'),
                 const SizedBox(height: 30,),
                 SingleChildScrollView(
-                  padding: EdgeInsets.only(right: 20),
+                  padding: const EdgeInsets.only(right: 20),
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: ticketList.map((ticket) => Ticketview(ticket: ticket, isColor: true,)).toList()
                   ),
                 ),
                 const SizedBox(height: 30,),
-                ContainerHeading(string: 'Hotels'),
+                const ContainerHeading(string: 'Hotels'),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(

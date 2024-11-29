@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ThinContainer extends StatelessWidget {
   final bool? isColor;
-  ThinContainer({super.key, this.isColor});
+  const ThinContainer({super.key, this.isColor});
 
   @override
   Widget build(BuildContext context) {

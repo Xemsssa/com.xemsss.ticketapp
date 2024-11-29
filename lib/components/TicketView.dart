@@ -18,7 +18,7 @@ class Ticketview extends StatelessWidget {
 
     return  Column(
       children: [
-        Container(margin: EdgeInsets.only(left: 10, right: 10),
+        Container(margin: const EdgeInsets.only(left: 10, right: 10),
           child: SizedBox(
             width: size.width - 60,
             height: 100,
@@ -27,7 +27,7 @@ class Ticketview extends StatelessWidget {
               decoration: BoxDecoration(
                 color: isColor == true ? Styles.primaryColor : Colors.white,
                     borderRadius:
-                    BorderRadius.only(
+                    const BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20)),
           
@@ -42,9 +42,9 @@ class Ticketview extends StatelessWidget {
                         Text(ticket['from']['code'], style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white):Styles.headlineStyle3.copyWith(color: Colors.black) ),
                         // Spacer(),
                         Expanded(child: Container()),
-                        ThinContainer(isColor: true),
+                        const ThinContainer(isColor: true),
                         const Expanded(child: FlightPlane(isColor: true)),
-                        ThinContainer(isColor: true),
+                        const ThinContainer(isColor: true),
                         Expanded(child: Container()),
                         // Spacer(),
                         Text(ticket['to']['code'], style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white): Styles.headlineStyle3.copyWith(color: Colors.black))
@@ -75,19 +75,19 @@ class Ticketview extends StatelessWidget {
           child: Container(
             // padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: isColor == true ? Color(0xfff37b67) : Colors.white,
+              color: isColor == true ? const Color(0xfff37b67) : Colors.white,
               borderRadius: BorderRadius.only(
-                  bottomLeft: isColor == true ? Radius.circular(20):Radius.circular(00) ,
-                  bottomRight: isColor == true ? Radius.circular(20):Radius.circular(00)
+                  bottomLeft: isColor == true ? const Radius.circular(20):const Radius.circular(00) ,
+                  bottomRight: isColor == true ? const Radius.circular(20):const Radius.circular(00)
               )
             ),
             child : Column(
               children: [
 
-                CutLine(),
+                const CutLine(isColor: true,),
 
                 Container(
-                  padding: EdgeInsets.only(left: 20, right: 20),
+                  padding: const EdgeInsets.only(left: 20, right: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
