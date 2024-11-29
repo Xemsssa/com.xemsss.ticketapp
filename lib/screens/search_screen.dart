@@ -3,6 +3,7 @@ import 'package:test_app/utils/styles.dart';
 
 import '../components/ContainerHeading.dart';
 import '../widgets/IconText.dart';
+import '../widgets/Tes.dart';
 import '../widgets/TicketButton.dart';
 import 'app_layout.dart';
 
@@ -24,7 +25,9 @@ class SearchScreen extends StatelessWidget {
               // child:
               Text('What are \nyou looking for?',style: Styles.headlineStyle.copyWith(fontSize: 48),),
             // ),
-            FittedBox(),
+            // FittedBox(text1: 'Airline tickets', text2: 'hotels'),
+           Tes(text1: "Airline tickets", text2: 'Hotels'),
+
 
             IconText(icon: Icons.flight_takeoff , text: "Departure",),
 

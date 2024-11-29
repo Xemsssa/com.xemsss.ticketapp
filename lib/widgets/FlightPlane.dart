@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FlightPlane extends StatelessWidget {
+ final bool? isColor;
   const FlightPlane({
-    super.key,
+    super.key, this.isColor,
   });
 
   @override
@@ -10,14 +11,14 @@ class FlightPlane extends StatelessWidget {
     return Stack(
       children:[
         SizedBox(
-          height: 24,
+          height: 30,
           child: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
               return Flex(
                 direction: Axis.horizontal,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.max,
-                children: List.generate(( constraints.constrainWidth()/6).floor(), (index) => SizedBox(width: 3,height: 1, child: DecoratedBox(decoration: BoxDecoration(color: Colors.white),),)),
+                children: List.generate(( constraints.constrainWidth()/6).floor(), (index) => SizedBox(width: 3,height: 1, child: DecoratedBox(decoration: BoxDecoration(color: isColor == true ? Colors.white : Colors.blue)))),
               );
             },
           ),

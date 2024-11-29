@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.only(right: 20),
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: ticketList.map((ticket) => Ticketview(ticket: ticket)).toList()
+                    children: ticketList.map((ticket) => Ticketview(ticket: ticket, isColor: true,)).toList()
                   ),
                 ),
                 const SizedBox(height: 30,),

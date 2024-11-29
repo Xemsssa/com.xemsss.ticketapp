@@ -9,7 +9,8 @@ import '../widgets/FlightPlane.dart';
 
 class Ticketview extends StatelessWidget {
   final Map<String, dynamic>  ticket;
-  const Ticketview({super.key, required this.ticket});
+  final bool? isColor;
+  const Ticketview({super.key, required this.ticket, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class Ticketview extends StatelessWidget {
             child: Container(
               // padding: ,
               decoration: BoxDecoration(
-                color: Styles.primaryColor,
+                color: isColor == true ? Styles.primaryColor : Colors.white,
                     borderRadius:
                     BorderRadius.only(
                         topLeft: Radius.circular(20),
@@ -38,27 +39,27 @@ class Ticketview extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text(ticket['from']['code'], style: Styles.headlineStyle3.copyWith(color: Colors.white),),
+                        Text(ticket['from']['code'], style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white):Styles.headlineStyle3.copyWith(color: Colors.black) ),
                         // Spacer(),
                         Expanded(child: Container()),
-                        const ThinContainer(),
-                        const Expanded(child: FlightPlane()),
-                        const ThinContainer(),
+                        ThinContainer(isColor: true),
+                        const Expanded(child: FlightPlane(isColor: true)),
+                        ThinContainer(isColor: true),
                         Expanded(child: Container()),
                         // Spacer(),
-                        Text(ticket['to']['code'], style: Styles.headlineStyle3.copyWith(color: Colors.white),)
+                        Text(ticket['to']['code'], style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white): Styles.headlineStyle3.copyWith(color: Colors.black))
                       ],
                     ),
                   ),
-          
+
                   Padding(
                     padding: const EdgeInsets.only(left: 20, right: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(ticket['from']['name'], style: Styles.headlineStyle4.copyWith(color: Colors.white),),
-                        Text(ticket['flying_time'], style: Styles.headlineStyle3.copyWith(color: Colors.white),),
-                        Text(ticket['to']['name'], style: Styles.headlineStyle4.copyWith(color: Colors.white),)
+                        Text(ticket['from']['name'], style: isColor == true ? Styles.headlineStyle4.copyWith(color: Colors.white):Styles.headlineStyle4.copyWith(color: Colors.grey)),
+                        Text(ticket['flying_time'], style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white):Styles.headlineStyle3.copyWith(color: Colors.black)),
+                        Text(ticket['to']['name'], style: isColor == true ? Styles.headlineStyle4.copyWith(color: Colors.white):Styles.headlineStyle3.copyWith(color: Colors.grey))
                       ],
                     ),
                   ),
@@ -73,11 +74,11 @@ class Ticketview extends StatelessWidget {
           height: 100,
           child: Container(
             // padding: const EdgeInsets.all(20),
-            decoration: const BoxDecoration(
-              color: Color(0xfff37b67),
+            decoration: BoxDecoration(
+              color: isColor == true ? Color(0xfff37b67) : Colors.white,
               borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20)
+                  bottomLeft: isColor == true ? Radius.circular(20):Radius.circular(00) ,
+                  bottomRight: isColor == true ? Radius.circular(20):Radius.circular(00)
               )
             ),
             child : Column(
@@ -93,21 +94,21 @@ class Ticketview extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(ticket['date'], style: Styles.headlineStyle3.copyWith(color: Colors.white),),
-                          Text('Date', style: Styles.headlineStyle3.copyWith(color: Colors.white),),
+                          Text(ticket['date'], style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white) : Styles.headlineStyle3.copyWith(color: Colors.black)),
+                          Text('Date', style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white): Styles.headlineStyle3.copyWith(color: Colors.grey)),
                         ],
                       ),
                       Column(
                         children: [
-                          Text(ticket['departure_time'], style: Styles.headlineStyle3.copyWith(color: Colors.white),),
-                          Text('Departure time', style: Styles.headlineStyle3.copyWith(color: Colors.white),)
+                          Text(ticket['departure_time'], style: isColor == true? Styles.headlineStyle3.copyWith(color: Colors.white):Styles.headlineStyle3.copyWith(color: Colors.black)),
+                          Text('Departure time', style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white): Styles.headlineStyle3.copyWith(color: Colors.grey) )
                         ],
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text(ticket['number'].toString(), style: Styles.headlineStyle3.copyWith(color: Colors.white),),
-                          Text('Number', style: Styles.headlineStyle3.copyWith(color: Colors.white),)
+                          Text(ticket['number'].toString(), style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white): Styles.headlineStyle3.copyWith(color: Colors.black)),
+                          Text('Number', style: isColor == true ? Styles.headlineStyle3.copyWith(color: Colors.white):Styles.headlineStyle3.copyWith(color: Colors.grey))
                         ],
                       ),
                     ],
