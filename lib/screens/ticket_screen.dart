@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/components/TicketView.dart';
 import 'package:test_app/widgets/CutLine.dart';
@@ -13,145 +14,188 @@ class TicketScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView(
+        body: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Text('Tickets', style: Styles.headlineStyle),
-            ),
-            const Tes(text1: "Upcoming", text2: "Previous"),
+            ListView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text('Tickets', style: Styles.headlineStyle),
+              ),
+              const Tes(text1: "Upcoming", text2: "Previous"),
 
-            Padding(
-                padding: const EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  Ticketview(ticket: ticketList[0]),
+              Padding(
+                  padding: const EdgeInsets.all(10),
+                child: Column(
+                  children: [
+                    Ticketview(ticket: ticketList[0]),
 
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: const BoxDecoration(
-                        color: Colors.white
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text("Flutter Dash"),
-                              Text("Passenger", style: Styles.headlineStyle3,)
-                            ],
-                          ),
-
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              const Text("5221 478566"),
-                              Text("Passport", style: Styles.headlineStyle3,),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  const CutLine2(),
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: const BoxDecoration(
-                          color: Colors.white
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text("005544477147"),
-                              Text("Number off e-ticket", style: Styles.headlineStyle3,)
-                            ],
-                          ),
-
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              const Text("B2SG28"),
-                              Text("Booking code", style: Styles.headlineStyle3,),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  const CutLine2(),
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: const BoxDecoration(
-                          color: Colors.white
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Image.asset('assets/images/visa.png',
-                                  height: 14,),
-                                  const Text('***'),
-                                  const Text("2462")
-                                ]
-                              ),
-                              Text("Payment method", style: Styles.headlineStyle3,)
-                            ],
-                          ),
-
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              const Text("\$249.99"),
-                              Text("Price", style: Styles.headlineStyle3,),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 20),
-                    child: Container(
-                      padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
-                      decoration: const BoxDecoration(
-                        color: Colors.white
-                      ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
                       child: Container(
                         padding: const EdgeInsets.all(20),
-                        height:70,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.black,
-                          border: Border.all(
-                            width: 2, color: Styles.primaryColor
-                          )
+                        decoration: const BoxDecoration(
+                          color: Colors.white
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Flutter Dash", ),
+                                Text("Passenger", style: Styles.headlineStyle4,)
+                              ],
+                            ),
+
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                const Text("5221 478566"),
+                                Text("Passport", style: Styles.headlineStyle4,),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  )
-                ],
-              )
+
+                    const CutLine2(),
+
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: const BoxDecoration(
+                            color: Colors.white
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text("005544477147"),
+                                Text("Number off e-ticket", style: Styles.headlineStyle4,)
+                              ],
+                            ),
+
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                const Text("B2SG28"),
+                                Text("Booking code", style: Styles.headlineStyle4,),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    const CutLine2(),
+
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: const BoxDecoration(
+                            color: Colors.white
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset('assets/images/visa.png',
+                                    height: 14,),
+                                    const Text('***'),
+                                    const Text("2462")
+                                  ]
+                                ),
+                                Text("Payment method", style: Styles.headlineStyle4,)
+                              ],
+                            ),
+
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                const Text("\$249.99"),
+                                Text("Price", style: Styles.headlineStyle4,),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(20),
+                            bottomLeft:  Radius.circular(20),
+                          ),
+                          color: Colors.white
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          height:70,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.black,
+                            border: Border.all(
+                              width: 2, color: Styles.primaryColor
+                            )
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Ticketview(ticket: ticketList[0], isColor: true,),
+            ],
+          ),
+            Positioned(
+              left: 19,
+              top: 295,
+              child: Container(
+                padding: EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Styles.textColor, width: 2,
+                  ),
+                ),
+                child: CircleAvatar(
+                  maxRadius: 4,
+                  backgroundColor: Styles.textColor,
+                ),
+              ),
             ),
-          ],
+            Positioned(
+              right: 19,
+              top: 295,
+              child: Container(
+                padding: EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Styles.textColor, width: 2,
+                  ),
+                ),
+                child: CircleAvatar(
+                  maxRadius: 4,
+                  backgroundColor: Styles.textColor,
+                ),
+              ),
+            )
+         ],
         ),
     );
   }

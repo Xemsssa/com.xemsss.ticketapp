@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 Color primary = const Color(0xff526779);
 
 class Styles{
+  static Color white = const Color(0xffffffff);
+  static Color gray = const Color(0x80808080);
+  static Color lightGray = const Color(0xFFC0C0D5);
   static Color primaryColor = primary; 
   static Color textColor = const Color(0xff3b3b3b);
   static Color backgroundColor = const Color(0xffeeedf2);
