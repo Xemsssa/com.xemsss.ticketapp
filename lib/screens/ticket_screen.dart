@@ -6,6 +6,7 @@ import 'package:test_app/widgets/Tes.dart';
 import 'package:test_app/utils/styles.dart';
 
 import '../utils/lists.dart';
+import '../widgets/ColumnWidget.dart';
 import '../widgets/CutLine2.dart';
 
 class TicketScreen extends StatelessWidget {
@@ -37,24 +38,19 @@ class TicketScreen extends StatelessWidget {
                         decoration: const BoxDecoration(
                           color: Colors.white
                         ),
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Flutter Dash", ),
-                                Text("Passenger", style: Styles.headlineStyle4,)
-                              ],
-                            ),
+                            ColumnWidget(text1: "Flutter Dash", text2: "Passenger",pos: CrossAxisAlignment.start ),
 
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                const Text("5221 478566"),
-                                Text("Passport", style: Styles.headlineStyle4,),
-                              ],
-                            ),
+                            // Column  (
+                            //   crossAxisAlignment: CrossAxisAlignment.end,
+                            //   children: [
+                            //     const Text("5221 478566"),
+                            //     Text("Passport", style: Styles.headlineStyle4,),
+                            //   ],
+                            // ),
+                            ColumnWidget(text1: "5221 478566", text2: "Passport",pos: CrossAxisAlignment.end ),
                           ],
                         ),
                       ),
@@ -69,24 +65,12 @@ class TicketScreen extends StatelessWidget {
                         decoration: const BoxDecoration(
                             color: Colors.white
                         ),
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text("005544477147"),
-                                Text("Number off e-ticket", style: Styles.headlineStyle4,)
-                              ],
-                            ),
+                            ColumnWidget(text1: "005544477147", text2: "Number off e-ticket",pos: CrossAxisAlignment.start ),
 
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                const Text("B2SG28"),
-                                Text("Booking code", style: Styles.headlineStyle4,),
-                              ],
-                            ),
+                            ColumnWidget(text1: "B2SG28", text2: "Booking code",pos: CrossAxisAlignment.end ),
                           ],
                         ),
                       ),
@@ -200,4 +184,6 @@ class TicketScreen extends StatelessWidget {
     );
   }
 }
+
+
 
