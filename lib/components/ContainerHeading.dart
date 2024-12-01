@@ -3,9 +3,10 @@ import 'package:test_app/utils/styles.dart';
 
 class ContainerHeading extends StatelessWidget {
   final String string ;
+  final VoidCallback? func;
 
   const ContainerHeading({
-    super.key, required this.string
+    super.key, required this.string, this.func
   });
 
   @override
@@ -17,6 +18,8 @@ class ContainerHeading extends StatelessWidget {
           style: Styles.headlineStyle2,),
         InkWell(
           onTap: () {
+            func;
+            // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => AllTickets()));
           },
           child: Text('View All',
             style: Styles.headlineStyle4,),

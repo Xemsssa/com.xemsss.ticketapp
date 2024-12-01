@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/screens/AllHotels.dart';
+import 'package:test_app/screens/AllTickets.dart';
+import 'package:test_app/screens/EditProfileScreen.dart';
 import 'package:test_app/screens/bottom_bar.dart';
 import 'package:test_app/utils/styles.dart';
 
@@ -18,6 +21,12 @@ class MyApp extends StatelessWidget {
         primaryColor: primary
       ),
       home: const BottomBar(),
+      routes: {
+        // '/': (context) => const BottomBar(),
+        '/all_tickets': (context) => const Alltickets(),
+        '/all_hotels': (context) => const AllHotels(),
+        'edit_profile_screen': (context) => const EditProfileScreen()
+      }
     );
   }
 }
@@ -31,22 +40,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
         title: Text(widget.title),
       ),
       body: const Center(

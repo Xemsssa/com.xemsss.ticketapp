@@ -66,7 +66,12 @@ class ProfileScreen extends StatelessWidget {
                   Spacer(),
                   Column(
                     children: [
-                      Text('Edit'),
+                      InkWell(
+                        onTap: () => Navigator.pushNamed(context, 'edit_profile_screen'),
+                          // onTap: () {
+                          //   // Navigator.pushNamed(context, 'edit_screen');
+                          // },
+                          child: Text('Edit')),
                     ],
                   )
                 ],
