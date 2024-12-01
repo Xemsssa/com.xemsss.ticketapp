@@ -8,6 +8,7 @@ import 'package:test_app/utils/styles.dart';
 import '../utils/lists.dart';
 import '../widgets/ColumnWidget.dart';
 import '../widgets/CutLine2.dart';
+// import 'package:barcode_widget/barcode_widget.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({super.key});
@@ -30,6 +31,7 @@ class TicketScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Ticketview(ticket: ticketList[0]),
+                    SizedBox(height: 2,),
 
                     Padding(
                       padding: const EdgeInsets.only(left: 20, right: 20),
@@ -115,6 +117,7 @@ class TicketScreen extends StatelessWidget {
                       ),
                     ),
 
+                    const SizedBox(height: 2,),
                     Padding(
                       padding: const EdgeInsets.only(left: 20, right: 20),
                       child: Container(
@@ -137,6 +140,25 @@ class TicketScreen extends StatelessWidget {
                             )
                           ),
                         ),
+                        // Container(
+                        //   padding: EdgeInsets.only(top: 20, bottom: 20),
+                        //   margin: EdgeInsets.only(left: 2, right: 20),
+                        //   color: Styles.white,
+                        //   child: Container(
+                        //     padding: EdgeInsets.symmetric(horizontal: 15),
+                        //     child: ClipRRect(
+                        //       borderRadius: BorderRadius.circular(15),
+                        //       child: BarcodeWidget(
+                        //         barcode: Barcode.code128(),
+                        //           data('https://github.com'),
+                        //         drawText: false,
+                        //         color: Styles.textColor,
+                        //         width: double.infinity ,
+                        //         heigh: 70,
+                        //       )`
+                        //     ),
+                        //   ),
+                        // )
                       ),
                     ),
                   ],
@@ -184,6 +206,5 @@ class TicketScreen extends StatelessWidget {
     );
   }
 }
-
 
 

@@ -104,7 +104,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
-              child: Text('Accumulated miled', style: Styles.headlineStyle,),
+              child: Text('Accumulated miles', style: Styles.headlineStyle,),
             ),
             Padding(
                 padding: EdgeInsets.all(20),
@@ -116,13 +116,18 @@ class ProfileScreen extends StatelessWidget {
              child: Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 Text('MIles accured', style: Styles.headlineStyle3,),
+                 Text('Miles accrued', style: Styles.headlineStyle3,),
                  Text('23 may 2021', style: Styles.headlineStyle3,)
                ],
              ),
            ),
+
+            Divider(color: Styles.gray,),
+
             RowWidget(text1: '23 042', text2: 'Airline CO', pos: CrossAxisAlignment.start,),
+            Divider(color: Styles.gray,),
             RowWidget(text1: '24', text2: 'Miles', pos: CrossAxisAlignment.start,),
+            Divider(color: Styles.gray,),
             RowWidget(text1: '54 340', text2: 'Exuma', pos: CrossAxisAlignment.start,),
 
             Center(
