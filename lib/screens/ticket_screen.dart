@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/components/TicketView.dart';
 import 'package:test_app/widgets/CutLine.dart';
+import 'package:test_app/widgets/TabWidget.dart';
 import 'package:test_app/widgets/Tes.dart';
 import 'package:test_app/utils/styles.dart';
 
@@ -10,27 +11,66 @@ import '../widgets/ColumnWidget.dart';
 import '../widgets/CutLine2.dart';
 // import 'package:barcode_widget/barcode_widget.dart';
 
-class TicketScreen extends StatelessWidget {
+class TicketScreen extends StatefulWidget {
   const TicketScreen({super.key});
 
   @override
+  State<TicketScreen> createState() => _TicketScreenState();
+}
+
+class _TicketScreenState extends State<TicketScreen> {
+  late int ticketIndex = 0;
+  @override
+  void didChangeDependencies() {
+    var args = ModalRoute.of(context)!.settings.arguments as Map;
+    // print('passed index ${args['index']}');
+    ticketIndex = args['index'];
+      super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Ticket"),
+        backgroundColor: Styles.backgroundColor
+      ),
         body: Stack(
           children: [
             ListView(
             children: [
+              // Padding(
+              //   padding: const EdgeInsets.all(10.0),
+              //   child: Text('Tickets', style: Styles.headlineStyle),
+              // ),
+              // const Tes(text1: "Upcoming", text2: "Previous"),
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Text('Tickets', style: Styles.headlineStyle),
+                child: Container(
+                  // padding: EdgeInsets.all(10),
+                  // padding: EdgeInsets.symmetric(vertical: 10),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Styles.lightGray, width:2),
+                        color: Styles.lightGray,
+                        borderRadius: BorderRadius.circular(20)
+                      // borderRadius: BorderRadius.horizontal(left: Radius.circular(50)),
+                    ),
+                    child:Row(
+                      children: [
+                        TabsWidget(size: size, text: "Upcoming", tabBorder: true,),
+                        // Spacer(),
+                        TabsWidget(size: size, text: "Previous", tabBorder: false,),
+                      ],
+                    )
+                ),
               ),
-              const Tes(text1: "Upcoming", text2: "Previous"),
-
               Padding(
                   padding: const EdgeInsets.all(10),
                 child: Column(
                   children: [
-                    Ticketview(ticket: ticketList[0]),
+                    // Ticketview(ticket: ticketList[0]),
+                    Ticketview(ticket: ticketList[ticketIndex]),
                     SizedBox(height: 2,),
 
                     Padding(
@@ -97,7 +137,7 @@ class TicketScreen extends StatelessWidget {
                                   children: [
                                     Image.asset('assets/images/visa.png',
                                     height: 14,),
-                                    const Text('***'),
+                                    const Text(' *** '),
                                     const Text("2462")
                                   ]
                                 ),
@@ -164,7 +204,7 @@ class TicketScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Ticketview(ticket: ticketList[0], isColor: true,),
+              Ticketview(ticket: ticketList[ticketIndex], isColor: true,),
             ],
           ),
             Positioned(

@@ -5,6 +5,8 @@ Color primary = const Color(0xff526779);
 class Styles{
   static Color white = const Color(0xffffffff);
   static Color gray = const Color(0x80808080);
+  static Color cyan = const Color(0xFF0D);
+  static Color red = const Color(0xFFFF3636);
   static Color lightGray = const Color(0xFFC0C0D5);
   static Color primaryColor = primary; 
   static Color textColor = const Color(0xff3b3b3b);

@@ -67,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
                   Column(
                     children: [
                       InkWell(
-                        onTap: () => Navigator.pushNamed(context, 'edit_profile_screen'),
+                        onTap: () => Navigator.pushNamed(context, '/edit_profile_screen'),
                           // onTap: () {
                           //   // Navigator.pushNamed(context, 'edit_screen');
                           // },
@@ -136,7 +136,9 @@ class ProfileScreen extends StatelessWidget {
             RowWidget(text1: '54 340', text2: 'Exuma', pos: CrossAxisAlignment.start,),
 
             Center(
-              child: InkWell(child: Text("How to get more miles")),
+              child: InkWell(
+                  onTap: () => Navigator.pushNamed(context, '/get_more_screen'),
+                  child: Text("How to get more miles")),
             )
           ],
         ),

@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/components/HotelScreenWidget.dart';
 import 'package:test_app/screens/AllHotels.dart';
 import 'package:test_app/screens/AllTickets.dart';
 import 'package:test_app/screens/EditProfileScreen.dart';
+import 'package:test_app/screens/GetMoreScreen.dart';
+import 'package:test_app/screens/AllUpcomingNews.dart';
 import 'package:test_app/screens/bottom_bar.dart';
+import 'package:test_app/screens/hotel_screen.dart';
+import 'package:test_app/screens/ticket_screen.dart';
+import 'package:test_app/utils/AppRoutes.dart';
 import 'package:test_app/utils/styles.dart';
 
 void main() {
@@ -23,9 +29,13 @@ class MyApp extends StatelessWidget {
       home: const BottomBar(),
       routes: {
         // '/': (context) => const BottomBar(),
-        '/all_tickets': (context) => const Alltickets(),
-        '/all_hotels': (context) => const AllHotels(),
-        'edit_profile_screen': (context) => const EditProfileScreen()
+        Approutes.allTickets:(context) => const Alltickets(),
+        Approutes.allHotels: (context) => const AllHotels(),
+        Approutes.editProfileScreen:(context) => const EditProfileScreen(),
+        Approutes.getMoreScreen: (context) => const Getmorescreen(),
+        Approutes.allUpcomingNews: (context) => const Allupcomingnews(),
+        Approutes.ticketScreen: (context) => const TicketScreen(),
+        Approutes.hotelScreen: (context) => const HotelScreen()
       }
     );
   }
