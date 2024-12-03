@@ -91,11 +91,11 @@ class _HotelScreenState extends State<HotelScreen> {
           ),
           SliverList(delegate: SliverChildListDelegate(
             [
-              const Padding(
+               Padding(
                 padding: EdgeInsets.all(20.0),
                 child:
-                  // ExpandedTextWidget(text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae odio sit amet orci dictum molestie sit amet vel augue. Fusce posuere accumsan ante, id placerat turpis blandit vel. Donec a lacus non nulla ornare hendrerit sed et justo. Curabitur hendrerit vitae odio nec faucibus. Donec sagittis urna a diam finibus, tincidunt facilisis orci efficitur. Ut arcu enim, ornare ut aliquam ut, venenatis ac nulla. Maecenas ac magna sapien. Quisque molestie nunc purus, ac imperdiet ligula pellentesque ac. Vestibulum massa tortor, pulvinar id enim et, bibendum rutrum magna. Donec cursus convallis justo'),
-                Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae odio sit amet orci dictum molestie sit amet vel augue. Fusce posuere accumsan ante, id placerat turpis blandit vel. Donec a lacus non nulla ornare hendrerit sed et justo. Curabitur hendrerit vitae odio nec faucibus. Donec sagittis urna a diam finibus, tincidunt facilisis orci efficitur. Ut arcu enim, ornare ut aliquam ut, venenatis ac nulla. Maecenas ac magna sapien. Quisque molestie nunc purus, ac imperdiet ligula pellentesque ac. Vestibulum massa tortor, pulvinar id enim et, bibendum rutrum magna. Donec cursus convallis justo'),
+                  ExpandedTextWidget(text: hotelList[index]['detail']),
+                // Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae odio sit amet orci dictum molestie sit amet vel augue. Fusce posuere accumsan ante, id placerat turpis blandit vel. Donec a lacus non nulla ornare hendrerit sed et justo. Curabitur hendrerit vitae odio nec faucibus. Donec sagittis urna a diam finibus, tincidunt facilisis orci efficitur. Ut arcu enim, ornare ut aliquam ut, venenatis ac nulla. Maecenas ac magna sapien. Quisque molestie nunc purus, ac imperdiet ligula pellentesque ac. Vestibulum massa tortor, pulvinar id enim et, bibendum rutrum magna. Donec cursus convallis justo'),
               ),
               const Padding(
                 padding: EdgeInsets.all(16),
@@ -124,5 +124,51 @@ class _HotelScreenState extends State<HotelScreen> {
         ],
       ),
     );
+  }
+}
+
+class ExpandedTextWidget extends StatefulWidget {
+  final String text;
+
+  const ExpandedTextWidget({super.key, required this.text});
+
+  @override
+  State<ExpandedTextWidget> createState() => _ExpandedTextWidgetState();
+}
+
+class _ExpandedTextWidgetState extends State<ExpandedTextWidget> {
+  bool visibility = false;
+
+  // String? get text => null;
+  // String text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae odio sit amet orci dictum molestie sit amet vel augue. Fusce posuere accumsan ante, id placerat turpis blandit vel. Donec a lacus non nulla ornare hendrerit sed et justo. Curabitur hendrerit vitae odio nec faucibus. Donec sagittis urna a diam finibus, tincidunt facilisis orci efficitur. Ut arcu enim, ornare ut aliquam ut, venenatis ac nulla. Maecenas ac magna sapien. Quisque molestie nunc purus, ac imperdiet ligula pellentesque ac. Vestibulum massa tortor, pulvinar id enim et, bibendum rutrum magna. Donec cursus convallis justo';
+  @override
+  Widget build(BuildContext context) {
+    var textWidget = Text(widget.text,
+      maxLines: visibility ? 3: null,
+      overflow: visibility ? TextOverflow.visible: TextOverflow.ellipsis,
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        textWidget,
+        GestureDetector(
+          onTap: () {
+            changeVisibility();
+          },
+          child: Text(visibility? 'less': 'more',
+            style: TextStyle(
+                color: Styles.primaryColor
+            ),
+
+          ),
+        )
+      ],
+    );
+  }
+
+  void changeVisibility() {
+    setState(() {
+      visibility = !visibility;
+    });
   }
 }

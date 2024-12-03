@@ -23,7 +23,7 @@ class Tes extends StatelessWidget {
         decoration: BoxDecoration(
             color: Styles.backgroundColor,
             borderRadius: BorderRadius.circular(20),
-          border: Border.all(width: 2, color: Styles.primaryColor)
+          border: Border.all(width: 2, color: Styles.lightGray)
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,10 +32,10 @@ class Tes extends StatelessWidget {
               width: size.width * 0.45,
 
               padding: const EdgeInsets.all(10),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(20),
                       bottomLeft: Radius.circular(20)),
-                  color: Colors.white
+                  color: Styles.white
               ),
               child:
               Center(child: Text(text1, style: const TextStyle(
