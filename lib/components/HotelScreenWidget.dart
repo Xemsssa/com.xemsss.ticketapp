@@ -5,8 +5,14 @@ import 'package:test_app/utils/styles.dart';
 
 class HotelScreenWidget extends StatelessWidget {
   final Map<String, dynamic>  hotel;
-  final bool wholeScreen;
-  const HotelScreenWidget({super.key, required this.hotel, required this.wholeScreen});
+  // final bool wholeScreen;
+  // final int index;
+  const HotelScreenWidget({
+    super.key,
+    required this.hotel,
+    // required this.wholeScreen,
+    // this.index
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +21,11 @@ class HotelScreenWidget extends StatelessWidget {
     return Container(
       // height: wholeScreen == true ? 240: 240,
       // width: wholeScreen == true ? size.width * 0.25 : size.width * 0.50,
+      width: size.width * 0.50,
       padding:const EdgeInsets.all(15),
       // ignore: prefer_const_constructors
-      margin: wholeScreen == true?EdgeInsets.all(10) : EdgeInsets.only(right: 10),
+      // margin: wholeScreen == true?EdgeInsets.all(10) : EdgeInsets.only(right: 10),
+      margin: EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
         color: Styles.primaryColor,
         borderRadius: BorderRadius.circular(20)
@@ -26,7 +34,8 @@ class HotelScreenWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: wholeScreen == true ? size.width * 0.95: size.width * 0.45,
+            // width: wholeScreen == true ? size.width * 0.95: size.width * 0.45,
+            // width: size.width * 0.45,
             // decoration: BoxDecoration(
             //   borderRadius: BorderRadius.circular(20),
               // color: const Color(0xff7c94b6),
@@ -38,7 +47,7 @@ class HotelScreenWidget extends StatelessWidget {
           //   ),
             child: Container(
               height: 140,
-              width: 10,
+              // width: 10,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Styles.gray,

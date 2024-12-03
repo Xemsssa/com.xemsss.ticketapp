@@ -95,9 +95,12 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     children: hotelList.map((hotel) => GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, Approutes.hotelScreen);
+                          var index = hotelList.indexOf(hotel);
+                          Navigator.pushNamed(context, Approutes.hotelScreen, arguments: {
+                            'index': index
+                          });
                         },
-                        child: HotelScreenWidget(hotel: hotel, wholeScreen: false,))).toList(),
+                        child: HotelScreenWidget(hotel: hotel))).toList(),
                     // children:
                     // [
                     //   Hotelscreen()
