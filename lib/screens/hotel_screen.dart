@@ -58,9 +58,28 @@ class _HotelScreenState extends State<HotelScreen> {
               background: Stack(
                 children: [
                   Positioned.fill(
-                    child: Image.asset(AppMedia.hotelRoom,
-                      fit: BoxFit.contain,
+                    // child: Image.asset(AppMedia.hotelRoom,
+                    // child: Image.asset(hotelList[index]['image'],
+                    // child: Image.asset('assets/images/hotel-room1.jpeg',
+
+                    child: Image.asset('assets/images/${hotelList[index]['image']}',
+                      fit: BoxFit.cover,
                     ),
+
+                    // child: Container(
+                    //   height: 100,
+                    //   width: 100,
+                    //   decoration: BoxDecoration(
+                    //     image: DecorationImage(
+                    //       image: AssetImage(
+                    //         // "assets/images/${hotelList[index]['image']"
+                    //           // hotelList[index]['image']
+                    //         'assets/images/${hotelList[index]['image']}',
+                    //       ),
+                    //     )
+                    //   ),
+                    // ),
+
                   ),
                   Positioned(
                     right: 20,
@@ -110,12 +129,18 @@ class _HotelScreenState extends State<HotelScreen> {
                 height: 200,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                    itemBuilder: (context, index){
+                  // itemCount: 10,
+                    itemCount: hotelList[index]['images'].length,
+                    itemBuilder: (context, imagesIndex){
+                    // print("${hotelList[index]['images'].length}");
+                    print("${hotelList[index]['images'][0]}");
                   return Container(
                     margin: const EdgeInsets.all(10),
                       color: Colors.red,
-                      child: Image.network('https://via.placeholder.com/200x200'));
+                      // child: Image.network('https://via.placeholder.com/200x200'));
+                      // child: Image.network('https://via.placeholder.com/200x200'));
+                      child: Image.asset("assets/images/${hotelList[index]['images'][imagesIndex]}")
+                  );
                 }),
               )
             ]
